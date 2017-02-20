@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>transition</title>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        div{
+            float: left;
+        }
+        .first,
+        .third{
+            background-color: yellow;
+        }
+        .second{
+            background-color: pink;
+        }
+        @media screen and (min-width: 1024px) {
+            .first,
+            .third {
+                width: 30%;
+                height:100px;
+            }
+            .second{
+                width:40%;
+                height:150px;
+            }
+        }
+        @media screen and (min-width: 768px ) and ( max-width:1024px) {
+            .first,
+            .third {
+
+                -webkit-transition: height,width  3s ease-in;
+                -moz-transition: height,width  3s ease-in ;
+                -ms-transition: height,width  3s ease-in ;
+                -o-transition: height,width  3s ease-in ;
+                transition: height,width  3s ease-in ;
+                width: 40%;
+                height:200px;
+            }
+            .second{
+                width:20%;
+                height:100px;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .first,
+            .third,
+            .second{
+                -webkit-transition: height,width  3s ease-in;
+                -moz-transition: height,width  3s ease-in ;
+                -ms-transition: height,width  3s ease-in ;
+                -o-transition: height,width  3s ease-in ;
+                transition: height,width  3s ease-in ;
+                width: 100%;
+                height:100px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="first">
+
+</div>
+<div class="second">
+
+</div>
+<div class="third">
+
+</div>
+</body>
+</html>
