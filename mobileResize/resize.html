@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>resize</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*区别document.element.clientwidth和document.body.clientwidth
+     * body是DOM对象里的body子节点，即 <body> 标签；documentElement 是整个节点树的根节点root，即<html> 标签
+     * */
+    var docEl     = document.documentElement,
+        /*现在大部分手机浏览器都支持 onorientationchange如果不支持，可以使用原始的 resize*/
+        resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+        maxWidth  = 750,
+        recalc    = function () {
+            var clientWidth = docEl.clientWidth > maxWidth ? maxWidth : docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+        };
+    /*
+     * var x = document.getElementById("myBtn");
+     if (x.addEventListener) {                    //所有主流浏览器，除了 IE 8 及更早 IE版本
+     x.addEventListener("click", myFunction);
+     } else if (x.attachEvent) {                  // IE 8 及更早 IE 版本
+     x.attachEvent("onclick", myFunction);
+     }
+     * */
+    (function () {
+        if (!document.addEventListener) return;
+    })();
+    /*
+     * element.addEventListener(event, function, useCapture是否冒泡)
+     * */
+    window.addEventListener(resizeEvt, recalc, false);
+    document.addEventListener('DOMContentLoaded', recalc, false);
+    recalc();
+</script>
+</html>
