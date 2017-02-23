@@ -1,0 +1,79 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+}
+
+
+body{
+    min-width: 1226px;
+    font:14px/1.5 "microsoft yahei";
+    color: #333;
+    background-color: #fff;
+}
+.site-topbar{
+    height:40px;
+    font-size:12px;
+    color: #b0b0b0;
+    background-color: #333;
+}
+.site-topbar .container{
+    width:1226px;
+    margin:0 auto;
+}
+.site-topbar .topbar-nav{
+    height:40px;
+    line-height: 40px;
+    float: left;
+    overflow: hidden;
+
+}
+.site-topbar .topbar-cart,
+.site-topbar .topbar-info{
+    height:40px;
+    line-height: 40px;
+    float: right;
+}
+.site-topbar span{
+    margin:0 0.5em;
+    color: #424242;
+}
+.site-topbar a:hover{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
