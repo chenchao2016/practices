@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>animations</title>
+</head>
+<style>
+    .box-wrap{
+        width: 100%;
+        height:200px;
+        background-color: #eee;
+    }
+    .box{
+        height:200px;
+        width:100px;
+        background-color: #F00;
+        margin-right:20px;
+        float: left;
+        border:2px solid #000;
+    }
+    @keyframes resize {
+        0% {
+            padding:0;
+        }
+        50% {
+            padding:0 20px;
+            background-color: #00A2D4;
+        }
+        100% {
+            padding:0 100px;
+            background-color: yellow;
+        }
+    }
+    .box1:hover{
+        animation-name: resize;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        /*animation-delay: 10s;*/
+    }
+</style>
+<body>
+    <div class="box-wrap">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+    </div>
+</body>
+</html>
