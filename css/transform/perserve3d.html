@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>perspective3d</title>
+</head>
+<style>
+    .wrap{
+        width:500px;
+        height:300px;
+        margin:30px auto;
+        position: relative;
+        background: url(http://www.w3cplus.com/sites/default/files/blogs/2013/1311/bg.jpg) repeat center center;
+        /*background-size: 100% 100%;*/
+    }
+    @keyframes spin {
+        from{
+            transform: rotateY(0deg);
+        }
+        to{
+            transform: rotateY(360deg);
+        }
+    }
+
+    .spin{
+        width:142px;
+        height:200px;
+        position: absolute;
+        top:20%;
+        left:20%;
+        border:1px solid orange;
+        transform-style: preserve-3d;
+    }
+    .spin:hover{
+        animation: spin 5s linear infinite alternate;
+    }
+    .rotate{
+        height:100%;
+        width:100%;
+        background: url("img/mm7.jpg") no-repeat center;
+        background-size:100% 100%;
+        border:5px solid red;
+        transform: perspective(200px) rotateY(45deg);
+    }
+    .rotate img{
+        height:100%;
+        width:100%;
+        border:1px solid green;
+        transform: rotateX(15deg) translateZ(10px);
+        transform-origin: 0 0 40px;
+    }
+
+    .three-d{
+        transform-style: preserve-3d;
+    }
+
+</style>
+<body>
+<div class="wrap">
+    <div class="spin">
+        <div class="rotate"><img src="img/mm7.jpg" alt=""></div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="spin">
+        <div class="rotate three-d"><img src="img/mm7.jpg" alt=""></div>
+    </div>
+</div>
+</body>
+</html>
